@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>{{ tituloAccion }} Cliente</h1>
+<div mat-dialog-content>
+  <form [formGroup]="formCliente">
+    <mat-grid-list cols="1" rowHeight="80px">
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="Nombre" />
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Edad</mat-label>
+          <input matInput formControlName="Edad" />
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close color="warn">Volver</button>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="addEditCliente()"
+    [disabled]="formCliente.invalid"
+  >
+    {{ botonAccion }}
+  </button>
+</div>
